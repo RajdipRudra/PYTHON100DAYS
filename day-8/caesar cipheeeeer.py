@@ -91,7 +91,7 @@ print(encrypt_word)'''
 
 
 
-rows = 10  # this will control the top half
+'''rows = 10  # this will control the top half
 
 # total height = top half + middle + bottom half
 total_rows = rows * 2 + 1
@@ -106,4 +106,32 @@ for i in range(total_rows):
     # change direction at the widest point
     if j == rows + 1:
         direction = -1
-    j += direction
+    j += direction'''
+
+
+
+
+
+
+user_input = ["aba","abba","ada","aga","aha","aka","ala","alula","ana",
+    "anna","ara","asa","ava","bib","bob","boob","bub","civic","dad",
+    "deed","deified","did","dud","eke","ere","esse","eve","ewe","eye",
+    "gag","gig","kayak","kazak","keek","kook","laval","level","madam","malayalam",
+    "mam","mim","minim","mom","mum","nan","naan","non","noon","nun",
+    "otto","pip","pop","poop","pup","radar","redder","refer","repaper","reviver",
+    "rotator","rotor","sagas","sees","sexes","sis","solos","sos","stats","stets",
+    "tenet","terret","tit","toot","tot","tut","ulu","utu","wow","mm",
+    "adaada","ekeeke","kazak","mum","pep","pop","pup","rar","rarar","ror",
+    "roror","sas","sasas","sus","susus","tat","tattarrattat","eveeve","ekeeke","annaanna",
+    "hannah","ottootto","noonnoon","bobobo","deedede","gigig","nununu","peep","wowow","mumum"
+]
+
+for i in user_input:
+    user_inputtt = list(i)
+    # indexx = user_input.index(i)
+    reverse_list = user_inputtt[::-1]
+
+    if user_inputtt==reverse_list:
+        print(f"the word {''.join(user_input)} is palendrom \n")
+    else:
+        print("not")
