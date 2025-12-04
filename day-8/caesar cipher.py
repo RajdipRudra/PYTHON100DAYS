@@ -84,6 +84,6 @@ while is_on==True:
         print(f"The encryped msg is -->\n{"".join(decrypt_msg)}")
         time.sleep(10)
     elif en_de=="ESC":
-        is_on==False
+        is_on=False
         break
     
