@@ -36,7 +36,7 @@ prime_number_check(number=n)'''
 
 
 
-Charecters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',"0","1","2","3","4","5","6","7","8","9",' ','!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '[', ']', '{', '}', '|', ';', ':', "'", '"', ',', '.', '<', '>', '/', '?','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',"0","1","2","3","4","5","6","7","8","9",' ','!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '[', ']', '{', '}', '|', ';', ':', "'", '"', ',', '.', '<', '>', '/', '?']
+'''Charecters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',"0","1","2","3","4","5","6","7","8","9",' ','!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '[', ']', '{', '}', '|', ';', ':', "'", '"', ',', '.', '<', '>', '/', '?','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',"0","1","2","3","4","5","6","7","8","9",' ','!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '[', ']', '{', '}', '|', ';', ':', "'", '"', ',', '.', '<', '>', '/', '?']
 
 def str_to_list(msg):
     msg_list = []
@@ -59,4 +59,51 @@ def decrypt(message,shift_number):
 
 
 encrypt_word = encrypt(message="i love sushi",shift_number=5)
-print(encrypt_word)
+print(encrypt_word)'''
+
+
+
+'''for i in range(1, 10 + 1):
+    # Print leading spaces
+    for j in range(10 - i):
+        print("_", end="")
+    # Print stars
+    for k in range(2 * i - 1):
+        print("*", end="")
+    print() # Move to the next line'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rows = 10  # this will control the top half
+
+# total height = top half + middle + bottom half
+total_rows = rows * 2 + 1
+
+j = 1  # start stars
+direction = 1  # 1 = growing, -1 = shrinking
+
+for i in range(total_rows):
+    # print spaces
+    print("_" * (rows - j + 1) + "*" * (2 * j - 1))
+    
+    # change direction at the widest point
+    if j == rows + 1:
+        direction = -1
+    j += direction
