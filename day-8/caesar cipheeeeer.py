@@ -9,7 +9,7 @@
             print("not prime")
 
 n = int(input("Check this number : "))
-prime_number_check(number=n)'''
+prime_number_check(number=n)
 
 
 def prime_number_check(number):
@@ -32,4 +32,31 @@ def prime_number_check(number):
         print(f"The number {number} is-NOT a Prime Number")
 
 n = int(input("Check this number : "))
-prime_number_check(number=n)
+prime_number_check(number=n)'''
+
+
+
+Charecters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',"0","1","2","3","4","5","6","7","8","9",' ','!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '[', ']', '{', '}', '|', ';', ':', "'", '"', ',', '.', '<', '>', '/', '?','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',"0","1","2","3","4","5","6","7","8","9",' ','!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '[', ']', '{', '}', '|', ';', ':', "'", '"', ',', '.', '<', '>', '/', '?']
+
+def str_to_list(msg):
+    msg_list = []
+    for i in msg:
+        msg_list.append(i)
+    return msg_list
+
+def encrypt(message,shift_number):
+    message_in_list = str_to_list(message)
+    encrypt_msg = []
+    for i in message_in_list:
+        for j in Charecters:
+            if i==j:
+                encrypt_msg.append(Charecters[shift_number])
+    return encrypt_msg
+
+def decrypt(message,shift_number):
+    pass
+
+
+
+encrypt_word = encrypt(message="i love sushi",shift_number=5)
+print(encrypt_word)
