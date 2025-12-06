@@ -1,5 +1,5 @@
 
-
+'''
 import time, sys
 
 def type_out(text, delay=0.08):
@@ -22,4 +22,86 @@ lyrics = [
 for line in lyrics:
     type_out("\n"+line)
 
-print("\n")
+print("\n")'''
+
+
+def is_leapyear(year):
+    if year%4==0:
+        if year%100:
+            if year%400:
+                return True
+            else:
+                return False
+        else:
+            return True
+    else:
+        return False
+
+def days_in_month(year,month):
+    days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    if is_leapyear(year=year) and month==1:
+        return 29
+    else:
+        return days_in_month[month]
+
+
+
+
+year = int(input("enter ur year : "))
+month = int(input("enter a month: "))
+dats = days_in_month(year,(month-1))
+print(dats)
+
+
+def is_leapyear(year):
+    if year%4==0:
+        if year%100:
+            if year%400:
+                return True
+            else:
+                return False
+        else:
+            return True
+    else:
+        return False
+
+def days_in_month(year,month):
+    days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    if is_leapyear(year=year) and month==1:
+        return 29
+    else:
+        return days_in_month[month]
+
+
+
+
+year = int(input("enter ur year : "))
+month = int(input("enter a month: "))
+dats = days_in_month(year,(month-1))
+print(dats)
+def is_leapyear(year):
+    if year%4==0:
+        if year%100:
+            if year%400:
+                return True
+            else:
+                return False
+        else:
+            return True
+    else:
+        return False
+
+def days_in_month(year,month):
+    days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    if is_leapyear(year=year) and month==1:
+        return 29
+    else:
+        return days_in_month[month]
+
+
+
+
+year = int(input("enter ur year : "))
+month = int(input("enter a month: "))
+dats = days_in_month(year,(month-1))
+print(dats)
