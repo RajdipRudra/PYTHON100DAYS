@@ -25,7 +25,7 @@ for line in lyrics:
 print("\n")'''
 
 
-def is_leapyear(year):
+'''def is_leapyear(year):
     if year%4==0:
         if year%100:
             if year%400:
@@ -104,4 +104,75 @@ def days_in_month(year,month):
 year = int(input("enter ur year : "))
 month = int(input("enter a month: "))
 dats = days_in_month(year,(month-1))
-print(dats)
+print(dats)'''
+
+
+#mport art
+import random as rn
+
+
+#logo = art.logo
+#                               J, Q, K
+cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
+
+
+#Deal both user and computer a starting hand of 2 random card values.
+'''def gen_card_start(cards):
+    rn_2cards = []
+    for i in range(2):
+        rn_2cards.append(rn.choice(cards))
+    return rn_2cards'''
+
+def gen_acard(cards):
+    rn_acard= rn.choice(cards)
+    return rn_acard 
+
+
+def if_computer_gen(comp_cards):
+    if sum(comp_cards)<17:
+        return gen_acard(cards)
+
+
+
+#print(logo)
+
+
+
+
+def who_wins(user_cards,comp_cards):
+    user_sum = sum(user_cards)
+    comp_sum = sum(comp_cards)
+    if (user_sum == comp_sum) or (user_sum>21 and comp_sum>21):
+        print("IT's A TIE")
+    elif ((user_sum<=21) and (user_sum>comp_sum))or ((user_sum<=21) and (user_sum<comp_sum)) or ((user_sum<21) and (comp_sum>=21)):
+        print(f"U WIN\ncompcards{comp_cards}")
+    elif ((comp_sum<=21) and (comp_sum>user_sum)) or ((user_sum<=21) and (user_sum>comp_sum)) or  ((user_sum>21) and (comp_sum<=21)):
+        print(f"COMPUTER WINS{comp_cards}")
+    
+
+    
+
+
+user_cards = [5,6,10]
+
+computer_cards = [10,2,11]
+
+is_gameon = True
+while is_gameon:
+    if ((sum(user_cards)!=21)) or ((sum(computer_cards)!=21 )):
+
+
+        print(f"Your cards: {user_cards}")
+        print(f"Computer's first card: {computer_cards}")
+        draw_another = input("Type 'y' to get another card, type 'n' to pass: ").lower()
+        if draw_another == 'y':
+            user_cards.append(gen_acard(cards))
+
+            computer_cards.append(if_computer_gen(computer_cards))
+        else:
+            who_wins(user_cards,computer_cards)
+            wanna_playagain = input("DO YOU WANT TO PLAY A GAME OF BLACKJAKE? (y) or (n)").lower()
+            if wanna_playagain == 'n':
+                is_gameon = False
+
+    
