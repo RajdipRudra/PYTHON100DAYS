@@ -108,7 +108,7 @@ print(dats)'''
 
 
 #mport art
-import random as rn
+'''import random as rn
 
 
 #logo = art.logo
@@ -117,13 +117,13 @@ cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
 
 
 #Deal both user and computer a starting hand of 2 random card values.
-'''def gen_card_start(cards):
+''''''def gen_card_start(cards):
     rn_2cards = []
     for i in range(2):
         rn_2cards.append(rn.choice(cards))
     return rn_2cards'''
 
-def gen_acard(cards):
+'''def gen_acard(cards):
     rn_acard= rn.choice(cards)
     return rn_acard 
 
@@ -174,5 +174,34 @@ while is_gameon:
             wanna_playagain = input("DO YOU WANT TO PLAY A GAME OF BLACKJAKE? (y) or (n)").lower()
             if wanna_playagain == 'n':
                 is_gameon = False
+'''
 
+no7_list = [
+    "Structure", 
+    '101', 
+    "Algorithm", 
+    "3.14", 
+    "Python", 
+    '15', 
+    "Coding", 
+    '99',
+    "Coding", 
+    '99', 
+    "Structure", 
+    '15',
+    "Mode", 
+    '1.618', 
+    "List", 
+    '20', 
+    "Tuple", 
+    '55'
+
+]
+
+for i in range(len(no7_list)):
+    for j in range(len(no7_list)):
+        if no7_list.count(no7_list[i])>=2:
+            no7_list.pop(no7_list.index(no7_list[i]))
+            
+no7_list
     
