@@ -174,7 +174,7 @@ while is_gameon:
             wanna_playagain = input("DO YOU WANT TO PLAY A GAME OF BLACKJAKE? (y) or (n)").lower()
             if wanna_playagain == 'n':
                 is_gameon = False
-'''
+
 
 no7_list = [
     "Structure", 
@@ -204,4 +204,40 @@ for i in range(len(no7_list)):
             no7_list.pop(no7_list.index(no7_list[i]))
             
 no7_list
+list_og = [1,2,3,4,5]
+number_of_time_itll_iterate = 1
+for i in range(1,len(list_og)+1):
+    number_of_time_itll_iterate*=i'''
+def get_permutations(elements):
+    # Base Case: If list is empty, return empty list
+    if len(elements) == 0:
+        return []
+    
+    # Base Case: If list has 1 item, return it as the only permutation
+    if len(elements) == 1:
+        return [elements]
+    
+    # List to store all result permutations
+    perms = []
+    
+    # Recursive Step
+    for i in range(len(elements)):
+        # Extract the current element
+        current = elements[i]
+        
+        # Get the remaining list
+        remaining_elements = elements[:i] + elements[i+1:]
+        
+        # Generate permutations of the remaining elements
+        remaining_perms = get_permutations(remaining_elements)
+        
+        # Append current element to the front of each sub-permutation
+        for p in remaining_perms:
+            perms.append([current] + p)
+            
+    return perms
+
+# Test it
+my_list = [1, 2, 3] # Keep it small for testing
+print(get_permutations(my_list))
     

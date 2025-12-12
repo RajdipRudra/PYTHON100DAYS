@@ -1,4 +1,16 @@
-# Create a 3D array using list comprehensions, with 3 rows, 4 columns, and each element initialized as '*'
-array = [[['*' for col in range(6)] for col in range(4)] for row in range(3)]
+import random as rn
+list_og = [1,2,3,4,5,6]
+new_list = []
 
-# Print the resulting 3D array
+time_itsgonnabeon = 1
+for j in range(1,len(list_og)+1):
+    time_itsgonnabeon *= j
+
+while len(new_list) < time_itsgonnabeon:
+    templist = list_og.copy()
+    rn.shuffle(templist)
+    if templist not in new_list:
+        # print("in newlist")
+        new_list.extend([templist])
+    # print(len(new_list))
+print(f"{new_list}\n") 
